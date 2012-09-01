@@ -17,7 +17,7 @@ urls = (
   '/', 'index'
 )
 
-render = web.template.render('templates/')
+render = web.template.render(os.path.join(os.path.dirname(__file__), 'templates/'))
 
 class index:
     def GET(self):
