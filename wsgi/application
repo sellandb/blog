@@ -13,7 +13,7 @@ except IOError:
 # line, it's possible required libraries won't be in your searchable path
 #
 import web
-render = web.template.render('templates/')
+render = web.template.render('../templates/index.html')
 urls = (
   '/', 'index'
 )
