@@ -13,17 +13,15 @@ except IOError:
 # line, it's possible required libraries won't be in your searchable path
 #
 import web
-render = web.template.render('../templates/')
+render = web.template.render('templates/')
 urls = (
   '/', 'index'
 )
 
-
-
 class index:
     def GET(self):
         name = 'Ben'
-        return render.index(name)
+        return render.index(name = name)
 
 application = web.application(urls, globals()).wsgifunc()
 
