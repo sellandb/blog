@@ -16,6 +16,14 @@ import web
 import datetime
 from pymongo import Connection
 
+mongo_con = pymongo.Connection(
+  os.environ['OPENSHIFT_NOSQL_DB_HOST'],
+  int(os.environ['OPENSHIFT_NOSQL_DB_PORT']))
+
+mongo_db = mongo_con[os.environ['OPENSHIFT_APP_NAME']]
+mongo_db.authenticate(os.environ['OPENSHIFT_NOSQL_DB_USERNAME'],
+                      os.environ['OPENSHIFT_NOSQL_DB_PASSWORD'])
+
 
 urls = (
   '/', 'index',
@@ -30,13 +38,11 @@ class index:
         return render.index(name = name)
 
 class post:
-    def GET(self):
-        connection = Connection('127.5.244.1',27017)
-        db = connection.blog
+    def GET(self):   
         post = {"author" : "Ben",
                 "text" : "My first blog post!",
                 "date" : datetime.datetime.utcnow()}
-        posts = db.Posts
+        posts = mongo_db.Posts
         posts.insert(post)
         return "Post inserted"
 
