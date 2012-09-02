@@ -27,7 +27,7 @@ mongo_db.authenticate(os.environ['OPENSHIFT_NOSQL_DB_USERNAME'],
 
 urls = (
   '/', 'index',
-  '/post', 'post'
+  '/post', 'post',
   '/insert', 'insert'
 )
 
