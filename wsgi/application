@@ -14,7 +14,7 @@ except IOError:
 #
 import web
 import datetime
-from pymongo import Connection
+import pymongo
 
 mongo_con = pymongo.Connection(
   os.environ['OPENSHIFT_NOSQL_DB_HOST'],
