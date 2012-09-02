@@ -6,5 +6,5 @@ setup(name='BenSellandBlog',
       author='Ben Selland',
       author_email='sellandb@gmail.com',
       url='http://www.python.org/sigs/distutils-sig/',
-      install_requires=['web.py','pymonngo'],
+      install_requires=['web.py','pymongo'],
      )
