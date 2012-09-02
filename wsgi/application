@@ -37,7 +37,7 @@ class post:
                 "text" : "My first blog post!",
                 "date" : datetime.datetime.utcnow()}
         posts = db.Posts
-        posts.inserts(post)
+        posts.insert(post)
         return "Post inserted"
 
 
