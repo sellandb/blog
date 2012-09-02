@@ -13,8 +13,13 @@ except IOError:
 # line, it's possible required libraries won't be in your searchable path
 #
 import web
+import datetime
+from pymongo import Connection
+
+
 urls = (
-  '/', 'index'
+  '/', 'index',
+  '/post', 'post'
 )
 
 render = web.template.render(os.path.join(os.path.dirname(__file__), 'templates/'))
@@ -23,6 +28,18 @@ class index:
     def GET(self):
         name = 'Ben'
         return render.index(name = name)
+
+class post:
+    def GET(self):
+        connection = Connection('127.5.244.1',27017)
+        db = connection.blog
+        post = {"author" : "Ben",
+                "text" : "My first blog post!",
+                "date" : datetime.datetime.utcnow()}
+        posts = dp.Posts
+        posts.inserts(post)
+        return "Post inserted"
+
 
 application = web.application(urls, globals()).wsgifunc()
 
