@@ -36,7 +36,7 @@ class post:
         post = {"author" : "Ben",
                 "text" : "My first blog post!",
                 "date" : datetime.datetime.utcnow()}
-        posts = dp.Posts
+        posts = db.Posts
         posts.inserts(post)
         return "Post inserted"
 
