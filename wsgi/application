@@ -28,6 +28,7 @@ mongo_db.authenticate(os.environ['OPENSHIFT_NOSQL_DB_USERNAME'],
 urls = (
   '/', 'index',
   '/post', 'post'
+  '/insert', 'insert'
 )
 
 render = web.template.render(os.path.join(os.path.dirname(__file__), 'templates/'))
@@ -38,6 +39,14 @@ class index:
         return render.index(name = name)
 
 class post:
+    def Get(self):
+        post = mongo_db.Posts.find_one()
+        name = post["author"]
+        text = post["text"]
+        date = post["date"]
+        return render.post(name, text, date)
+
+class insert:
     def GET(self):   
         post = {"author" : "Ben",
                 "text" : "My first blog post!",
