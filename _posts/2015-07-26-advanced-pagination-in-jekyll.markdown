@@ -91,4 +91,4 @@ Liquid will not parse paginator.page - 2 properly and give us the range we inspe
 {% endfor %}
 ```
 
-Using the above technique you can detect state (what the current page is) and then use the appropriate for loop to render the paginator. You can check out a working version of the code [here][].
+Using the above technique you can detect state (what the current page is) and then use the appropriate for loop to render the paginator. You can check out a working version of the code [here][https://raw.githubusercontent.com/sellandb/blog/master/index.html].
