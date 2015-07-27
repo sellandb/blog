@@ -1,7 +1,8 @@
 ---
 title:  "Advanced Pagination in Jekyll"
-date:   2015-07-20 23:41:23
+date:   2015-07-26 23:11:23
 categories: Jekyll Pagination Liquid
+excerpt: Jekyll provides a powerful framework for creating a statically generated blog. Some of the features like templating and markdown processing are fairly straightforward, but creating a functioning paginator for your blog can be challenging.
 ---
 [Jekyll][http://jekyllrb.com/] provides a powerful framework for creating a statically generated blog. Some of the features like templating and markdown processing are fairly straightforward, but creating a functioning paginator for your blog can be challenging.
 
