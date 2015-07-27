@@ -1,0 +1,46 @@
+<!-- Sidebar -->
+  <div id="sidebar">
+
+    <!-- Logo -->
+      <h1 id="logo"><a href="{{site.url}}">{{site.title}}</a></h1>
+
+    <!-- Nav -->
+      <nav id="nav">
+        {% assign latest = site.posts | first %}
+        <ul>
+          <li><a href="{{latest.url}}">Latest Post</a></li>
+          <li><a href="http://ben.sel.land">About Me</a></li>
+          <li><a href="http://ben.sel.land/#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+
+    <!-- Text -->
+      <section class="box text-style1">
+        <div class="inner">
+          <p>
+            <strong>Further From Here:</strong> Thoughts and demos from <a href="http://ben.sel.land">Ben Selland</a>
+          </p>
+        </div>
+      </section>
+
+    <!-- Recent Posts -->
+      <section class="box recent-posts">
+        <header>
+          <h2>Recent Posts</h2>
+        </header>
+        <ul>
+          {% for post in site.posts limit:5 %}
+
+          <li><a href="{{post.url}}">{{post.title}}</a></li>
+
+          {% endfor %}
+
+        </ul>
+      </section>
+
+    <!-- Copyright -->
+      <ul id="copyright">
+        <li>&copy; Ben Selland.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+
+  </div>

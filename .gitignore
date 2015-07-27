@@ -1,2 +1,2 @@
-*.pyc
-*.pyo
+_site
+.sass-cache

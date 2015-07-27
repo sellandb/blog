@@ -1,0 +1,31 @@
+# Site settings
+title: Further From Here
+email: ben@sel.land
+description: > # this means to ignore newlines until "baseurl:"
+  Further From Here is a blog written by Ben Selland with thoughts
+  on life, digital media and how technology is quickly taking over the
+  world.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://blog.ben.sel.land" # the base hostname & protocol for your site
+twitter_username: sellandb
+github_username:  sellandb
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+rouge:
+  line_numbers: true
+
+paginate: 2
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /posts/:year/:month/:day/:title/
